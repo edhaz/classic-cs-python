@@ -52,4 +52,4 @@ def fib6(n: int) -> Generator[int, None, None]:
 
 
 if __name__ == "__main__":
-    print(fib4(997))
+    print(fib4(996))
