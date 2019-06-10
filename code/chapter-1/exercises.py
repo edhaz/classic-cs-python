@@ -1,4 +1,7 @@
-# 1. Write a different version of solving fibonnaci
+#  1. Write a different version of solving fibonnaci
 
-def fib():
+
+def fib(n):
     pass
+
+print(fib(6))
