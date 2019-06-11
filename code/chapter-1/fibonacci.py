@@ -1,6 +1,7 @@
 from typing import Dict, Generator
 from functools import lru_cache
-
+import time
+start_time = time.time()
 
 # 1 - Infinite recursion
 def fib1(n: int) -> int:
@@ -52,4 +53,6 @@ def fib6(n: int) -> Generator[int, None, None]:
 
 
 if __name__ == "__main__":
-    print(fib4(996))
+    for i in range(10000):
+        fib3(10)
+    print("Time taken:", time.time() - start_time)
