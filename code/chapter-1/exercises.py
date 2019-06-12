@@ -9,3 +9,9 @@ def fib(n):
     return memo[n]
 
 # print("Time taken:", time.time() - start_time)
+
+#  2. Create a wrapper around int
+
+
+#  3. Towers of Hanoi solver
+

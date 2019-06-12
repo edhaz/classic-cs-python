@@ -2,6 +2,7 @@
 # eg. a stack
 # pop (removes and return last item) and push (add new item)
 
+from functools import lru_cache
 from typing import TypeVar, Generic, List
 T = TypeVar('T')
 
@@ -9,13 +10,13 @@ T = TypeVar('T')
 class Stack(Generic[T]):
     def __init__(self):
         self._container: List[T] = []
-    
+
     def push(self, item: T) -> None:
         self._container.append(item)
 
     def pop(self) -> T:
         return self._container.pop()
-    
+
     def __repr__(self) -> str:
         return repr(self._container)
 
@@ -27,8 +28,9 @@ tower_c: Stack[int] = Stack()
 for i in range(1, num_discs + 1):
     tower_a.push(i)
 
+# @lru_cache()
 def hanoi(begin: Stack[int], end: Stack[int], temp: Stack[int], n: int) -> None:
-    print(begin, end, temp)
+    # print(begin, end, temp)
     if n == 1:
         end.push(begin.pop())
     else:
@@ -38,4 +40,4 @@ def hanoi(begin: Stack[int], end: Stack[int], temp: Stack[int], n: int) -> None:
 
 if __name__ == "__main__":
     hanoi(tower_a, tower_b, tower_c, num_discs)
-    hanoi(tower_b, tower_c, tower_a, num_discs)
+    print(tower_a, tower_b, tower_c)
