@@ -21,14 +21,14 @@ class Stack(Generic[T]):
         return repr(self._container)
 
 
-num_discs: int = 25
+num_discs: int = 22
 tower_a: Stack[int] = Stack()
 tower_b: Stack[int] = Stack()
 tower_c: Stack[int] = Stack()
 for i in range(1, num_discs + 1):
     tower_a.push(i)
 
-# @lru_cache()
+
 def hanoi(begin: Stack[int], end: Stack[int], temp: Stack[int], n: int) -> None:
     # print(begin, end, temp)
     if n == 1:
@@ -38,6 +38,7 @@ def hanoi(begin: Stack[int], end: Stack[int], temp: Stack[int], n: int) -> None:
         hanoi(begin, end, temp, 1)
         hanoi(temp, end, begin, n - 1)
 
+
 if __name__ == "__main__":
-    hanoi(tower_a, tower_b, tower_c, num_discs)
+    hanoi(tower_a, tower_c, tower_b, num_discs)
     print(tower_a, tower_b, tower_c)
